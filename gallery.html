@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery Welcome Page</title>
+<link rel="stylesheet" type="text/css" href="gallery.css">
+</head>
+<body>
+<!-- Navigation Bar with Logo and Login Button -->
+<nav>
+  <div class="nav-left">
+    <img src="Logo1.png" alt="Logo" class="logo" />
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutuss.html">About</a>
+      <a href="contactt.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Header with big image and welcome text -->
+<div class="header" id="top">
+  <div class="overlay">
+    <h1>Welcome to the Gallery</h1>
+    <div class="arrow" id="scrollDown">&#8595;</div>
+  </div>
+</div>
+
+<!-- Gallery Section with solid background color -->
+<div id="gallery">
+  <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Gallery images will be injected here -->
+  </div>
+</div>
+
+<!-- Modal for full-size image -->
+<div id="imageModal">
+  <span id="closeModal">&times;</span>
+  <img id="fullImage" src="" alt="Full Size" />
+</div>
+
+<script>
+  // Array of images
+  const images = [
+    { src: "closeup-portrait-tilted-head-shot-cheetah-looking-straight-into-camera.jpg", alt: "Landscape 1" },
+    { src: "animal-portrait-close-up.jpg", alt: "Landscape 2" },
+    { src: "closeup-shot-african-leopard.jpg", alt: "Landscape 3" },
+    { src: "majestic-big-cat-with-striking-yellow-fur-generated-by-ai.jpg", alt: "Performance" },
+    { src: "vertical-shot-sleeping-jaguar.jpg", alt: "Village" },
+    { src: "leopard on the tree.png", alt: "Garden" },
+    { src: "vertical-shot-leopard-its-habitat-safari-okavanga-delta-botswana.jpg", alt: "Library" },
+    { src: "vertical-shot-sleeping-jaguar.jpg", alt: "Farm" },
+    { src: "beautiful-black-white-jaguar.jpg", alt: "Arts" },
+    { src: "black-white-jaguar-nature.jpg", alt: "Town" },
+    { src: "black-white-jaguar-nature (1).jpg", alt: "Cityscape" },
+    { src: "view-wild-leopard-nature.jpg", alt: "Sunset" },
+    { src: "vertical-shot-leopard-its-habitat-safari-okavanga-delta-botswana.jpg", alt: "Mountain" },
+    { src: "beautiful-endangered-american-jaguar-nature-habitat-panthera-onca-wild-brasil-brasilian-wildlife-pantanal-green-jungle-big-cats.jpg", alt: "Beach" },
+    { src: "pexels-uwc12-1375555.jpg", alt: "Park" },
+
+    // Additional images
+    { src: "pexels-pia-kafanke-1776039-3349422.jpg", alt: "Nature" },
+    { src: "pexels-monkeytactics-751820.jpg", alt: "Landscape" },
+    { src: "pexels-ludawigakwana-2411916.jpg", alt: "Forest" },
+    { src: "pexels-jaspreet-singh-256740-2451625.jpg", alt: "Animals" },
+    { src: "pexels-hsapir-1109907.jpg", alt: "Wildlife" },
+    { src: "pexels-enric-cruz-lopez-6272179.jpg", alt: "Wild Animals" },
+    { src: "pexels-denise-556264-2759315.jpg", alt: "Snow Mountain" },
+    { src: "pexels-danique-veldhuis-251773823-20449623.jpg", alt: "Autumn Forest" },
+    { src: "pexels-charles-miller-1020744-3660441.jpg", alt: "Sunset" },
+    { src: "pexels-pixabay-33154.jpg", alt: "River" },
+    { src: "pexels-pixabay-51129.jpg", alt: "Beach" },
+    { src: "pexels-pixabay-209008.jpg", alt: "Mountain" },
+    { src: "pexels-pixabay-209063.jpg", alt: "Park" },
+    { src: "pexels-public-domain-pictures-87403.jpg", alt: "Sunset Beach" },
+    { src: "pexels-satya-27903-2426410.jpg", alt: "City" },
+    { src: "pexels-sawibythepixels-1642069.jpg", alt: "Desert" },
+    { src: "pexels-uwc12-1375555.jpg", alt: "Sunrise" }
+  ];
+
+  const galleryGrid = document.getElementById('galleryGrid');
+
+  // Populate gallery with images
+  images.forEach(image => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.innerHTML = `<img src="${image.src}" alt="${image.alt}" />`;
+    // Add click event for full view
+    div.addEventListener('click', () => {
+      document.getElementById('fullImage').src = image.src;
+      document.getElementById('fullImage').alt = image.alt;
+      document.getElementById('imageModal').style.display = 'flex';
+    });
+    galleryGrid.appendChild(div);
+  });
+
+  // Scroll down function
+  document.getElementById('scrollDown').addEventListener('click', () => {
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Close modal when clicking on close button
+  document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('imageModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside the image
+  document.getElementById('imageModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('imageModal')) {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

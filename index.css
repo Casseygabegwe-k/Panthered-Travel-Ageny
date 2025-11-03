@@ -1,0 +1,273 @@
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100vh;
+    background-image: url('view-wild-leopard-nature.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  /* Navigation bar at the top */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+
+  /* Left side of nav: logo + links */
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo styles */
+  .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+  }
+
+  /* Navigation links */
+  .nav-links a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none; /* no underline by default */
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+
+  /* Hover effect for nav links */
+  .nav-links a:hover {
+    color: #ffd700; /* gold color on hover */
+    /* no underline on hover */
+  }
+  /* Container for the gallery and login buttons to align them together */
+.nav-buttons {
+  display: flex;
+  gap: 10px; /* space between the buttons */
+  align-items: center;
+}
+/* Style for the Gallery button */
+.gallery-button {
+  background-color: #ffd700; /* yellow */
+  border: 2px solid gold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.gallery-button:hover {
+  background-color: #e6c200; /* darker yellow on hover */
+}
+  /* Login button styles */
+  .login-button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .login-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  /* Container for search box */
+  .search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+  }
+
+  .search-container input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid white;
+    border-radius: 4px 0 0 4px;
+    background-color: transparent;
+    color: white;
+    font-size: 1em;
+  }
+
+  .search-container input[type="text"]:focus {
+    outline: none;
+    border-color: #ffd700;
+  }
+
+  .search-container button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+
+  /* Container for social info and icons at bottom right */
+  .bottom-right-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 220px;
+    z-index: 9;
+  }
+
+  /* Smaller, horizontal text */
+  .social-info {
+    font-size: 0.6em; /* even smaller font size */
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-align: right;
+  }
+
+/* Modal styles for the popup login with image side by side */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: row;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    position: relative;
+  }
+
+  /* Close button inside modal */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* Styles for login form section inside modal */
+  .modal-login-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .modal-login-section h2 {
+    margin-top: 0;
+  }
+
+  .modal-login-section form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-login-section input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+  }
+
+  .modal-login-section button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  /* Styles for image section inside modal */
+  .modal-image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modal-image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Responsive adjustments for modal */
+  @media(max-width: 768px){
+    .modal-content {
+      flex-direction: column;
+    }
+    .modal-login-section,
+    .modal-image-section {
+      max-width: 100%;
+    }
+  }
+  /* Grid for social media icons - smaller size */
+  .social-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 24px);
+    grid-template-rows: repeat(2, 24px);
+    gap: 6px;
+  }
+
+  .social-icons-grid a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Smallest social media icons */
+  .social-icons-grid img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+  }
+
+  /* Hover effect for icons */
+  .social-icons-grid img:hover {
+    transform: scale(1.1);
+  }

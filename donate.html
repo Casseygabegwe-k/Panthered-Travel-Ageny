@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donate - Wildlife Conservation</title>
+<link rel="stylesheet" type="text/css" href="donate.css">
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <img src="Logo1.png" alt="Logo" class="logo" />
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutuss.html">About</a>
+      <a href="contactt.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="header">
+  <h1>Support Conservation Efforts</h1>
+</div>
+
+<!-- Donation Section -->
+<div class="donate-section">
+  <h2>Make a Difference Today</h2>
+  <p style="max-width:700px; margin:auto; font-size:1.2em; margin-bottom:30px;">Your generous donation helps us protect endangered species, restore habitats, and fund vital research. Choose an amount below or enter your custom contribution to join our mission of saving wildlife and preserving our planet.</p>
+
+  <!-- Donation Options -->
+  <div class="donation-options">
+    <div class="option-card">
+      <h3>$10</h3>
+      <p>Supports anti-poaching patrols in protected reserves.</p>
+      <input class="amount-input" type="number" placeholder="$10" min="1" />
+      <button class="donate-btn" onclick="donate(10)">Donate $10</button>
+    </div>
+    <div class="option-card">
+      <h3>$50</h3>
+      <p>Funds habitat restoration projects for endangered species.</p>
+      <input class="amount-input" type="number" placeholder="$50" min="1" />
+      <button class="donate-btn" onclick="donate(50)">Donate $50</button>
+    </div>
+    <div class="option-card">
+      <h3>$100</h3>
+      <p>Supports wildlife research and conservation education.</p>
+      <input class="amount-input" type="number" placeholder="$100" min="1" />
+      <button class="donate-btn" onclick="donate(100)">Donate $100</button>
+    </div>
+    <div class="option-card">
+      <h3>Custom Amount</h3>
+      <input id="customAmount" class="amount-input" type="number" placeholder="Enter amount" min="1" />
+      <br />
+      <button class="donate-btn" onclick="donateCustom()">Donate Custom</button>
+    </div>
+  </div>
+
+  <!-- Additional info -->
+  <div class="info">
+    <p>All donations are tax-deductible. You will be redirected to a secure payment gateway to complete your contribution. Your support directly impacts wildlife and ecosystems worldwide.</p>
+  </div>
+</div>
+
+<script>
+  function donate(amount) {
+    alert('Thank you for donating $' + amount + '! Your support makes a real difference.');
+    // Here you can integrate with your payment processing API
+  }
+
+  function donateCustom() {
+    const amount = document.getElementById('customAmount').value;
+    if (amount && amount > 0) {
+      alert('Thank you for donating $' + amount + '! Your support makes a real difference.');
+      // Integrate with payment API here as well
+    } else {
+      alert('Please enter a valid amount.');
+    }
+  }
+</script>
+
+</body>
+</html>

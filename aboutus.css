@@ -1,0 +1,241 @@
+
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+
+  /* Navigation Bar */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push left and right apart */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+
+  /* Left side of nav: logo + links */
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo styles */
+  .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+  }
+
+  /* Navigation links */
+  .nav-links a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+
+  /* Hover effect for nav links */
+  .nav-links a:hover {
+    color: #ffd700;
+  }
+
+  /* Container for right-side buttons/links */
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Donate Button */
+  .donate-btn {
+    background-color: #ffd700;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+
+  .donate-btn:hover {
+    background-color: #e6c200;
+  }
+
+  /* Style for Gallery button */
+  .gallery-btn {
+    background-color: #ffd700;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .gallery-btn:hover {
+    background-color: #e6c200;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: url('KOOSPANORAMIC_58.jpeg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .hero h1 {
+    font-size: 3em;
+    z-index: 1;
+    margin: 0;
+  }
+
+  /* Main Content */
+  .about-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .about-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+
+  .mission {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+
+  .mission-text {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .mission-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  /* Team section */
+  .team {
+    text-align: center;
+  }
+
+  .team h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #388e3c;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .member {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s;
+  }
+
+  .member:hover {
+    transform: translateY(-5px);
+  }
+
+  .member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .member h4 {
+    margin: 10px 0 5px;
+  }
+
+  .member p {
+    font-size: 0.95em;
+    color: #555;
+  }
+
+  /* Contact Info */
+  .contact {
+    background: #ccba87;
+    color: #000; /* corrected from #black to #000 */
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .contact h2 {
+    margin-bottom: 20px;
+  }
+
+  .contact p {
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: #c7a036;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 768px){
+    .mission {
+      flex-direction: column;
+    }
+    .team-members {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 15px;
+    }
+  }
